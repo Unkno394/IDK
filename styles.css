@@ -474,7 +474,7 @@ color: rgba(52, 58, 63, 0.5);
       background-color: #F4F4F4;
       justify-content: space-between;
     height: 47px;
-    
+    padding: 0 40px;
     }
   
     .left-group {
