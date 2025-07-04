@@ -116,3 +116,62 @@ document.querySelector('.catalog')?.addEventListener('click', function() {
     document.querySelector('.menu-panel').classList.add('active');
     document.body.style.overflow = 'hidden';
 });
+
+function moveElementsForDesktop() {
+    const cityEl = document.querySelector('.cityy');
+    const phoneEl = document.querySelector('.phone');
+    const timeEl = document.querySelector('.worktime');
+    const helpEl = document.querySelector('.help');
+    const grey = document.querySelector('.grey');
+    const main = document.querySelector('main');
+  
+    if (!grey || !main) return;
+  
+    // Создаём контейнеры один раз
+    let leftGroup = grey.querySelector('.left-group');
+    if (!leftGroup) {
+      leftGroup = document.createElement('div');
+      leftGroup.className = 'left-group';
+      grey.prepend(leftGroup);
+    }
+  
+    let centerGroup = grey.querySelector('.center-group');
+    if (!centerGroup) {
+      centerGroup = document.createElement('div');
+      centerGroup.className = 'center-group';
+      grey.appendChild(centerGroup);
+    }
+  
+    let rightGroup = grey.querySelector('.right-group');
+    if (!rightGroup) {
+      rightGroup = document.createElement('div');
+      rightGroup.className = 'right-group';
+      grey.appendChild(rightGroup);
+    }
+  
+    const isDesktop = window.innerWidth >= 768;
+  
+    if (isDesktop) {
+      if (cityEl && !leftGroup.contains(cityEl)) leftGroup.appendChild(cityEl);
+      if (phoneEl && !leftGroup.contains(phoneEl)) leftGroup.appendChild(phoneEl);
+  
+      if (timeEl && !centerGroup.contains(timeEl)) centerGroup.appendChild(timeEl);
+  
+      if (helpEl && !rightGroup.contains(helpEl)) rightGroup.appendChild(helpEl);
+    } else {
+      // Возвращаем всё в main
+      if (cityEl && !main.contains(cityEl)) main.appendChild(cityEl);
+      if (phoneEl && !main.contains(phoneEl)) main.appendChild(phoneEl);
+      if (timeEl && !main.contains(timeEl)) main.appendChild(timeEl);
+      if (helpEl && !main.contains(helpEl)) main.appendChild(helpEl);
+  
+      // Удаляем временные контейнеры, чтобы не мешались
+      if (leftGroup) leftGroup.remove();
+      if (centerGroup) centerGroup.remove();
+      if (rightGroup) rightGroup.remove();
+    }
+  }
+  
+  window.addEventListener('resize', moveElementsForDesktop);
+  window.addEventListener('DOMContentLoaded', moveElementsForDesktop);
+  

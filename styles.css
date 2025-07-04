@@ -457,3 +457,34 @@ color: rgba(52, 58, 63, 0.5);
     display: block;
     height: 82px;
 }
+
+@media (min-width: 768px) {
+    .world {
+      display: none;
+    }
+  
+    .grey {
+      display: flex;
+      background-color: #F4F4F4;
+      justify-content: space-between;
+    height: 47px;
+    
+    }
+  
+    .left-group {
+      display: flex;
+      gap: 15px;
+      
+    }
+    .help {
+      display: flex;
+      gap: 16px;
+      margin-top: -23px;
+    }
+  
+    .help p {
+      margin: 0;
+      opacity: 0.8;
+    }
+  }  
+  
