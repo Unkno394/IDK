@@ -48,3 +48,36 @@ document.querySelector('.catalog-panel svg')?.addEventListener('click', function
     document.querySelector('.catalog-panel').classList.remove('active');
     document.body.style.overflow = '';
 });
+
+// Обработка кликов на категории в основной панели
+document.querySelectorAll('.catalog-panel .select-one').forEach(item => {
+    item.addEventListener('click', function(e) {
+        e.stopPropagation();
+        const panelTitle = this.querySelector('p')?.textContent.trim();
+        
+        if (panelTitle) {
+            // Устанавливаем заголовок для подкатегории
+            document.querySelector('.subcategory-panel .content-catalog p').textContent = panelTitle;
+            
+            // Показываем панель подкатегорий
+            document.querySelector('.subcategory-panel').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+    });
+});
+
+// Кнопка "назад" в подкатегориях
+document.querySelector('.subcategory-panel svg')?.addEventListener('click', function(e) {
+    e.stopPropagation();
+    document.querySelector('.subcategory-panel').classList.remove('active');
+});
+
+// Закрытие при клике вне панели
+document.addEventListener('click', (e) => {
+    const subcategoryPanel = document.querySelector('.subcategory-panel');
+    if (subcategoryPanel.classList.contains('active') && 
+        !e.target.closest('.subcategory-panel') && 
+        !e.target.closest('.catalog-panel .select-one')) {
+        subcategoryPanel.classList.remove('active');
+    }
+});
