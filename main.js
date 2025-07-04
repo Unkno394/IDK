@@ -40,3 +40,11 @@ document.querySelectorAll('.select-one').forEach(item => {
       document.body.style.overflow = '';
     }
   });
+
+
+  
+document.querySelector('.catalog-panel svg')?.addEventListener('click', function(e) {
+    e.stopPropagation(); 
+    document.querySelector('.catalog-panel').classList.remove('active');
+    document.body.style.overflow = '';
+});
