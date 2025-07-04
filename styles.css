@@ -650,6 +650,95 @@ text-align: center;
 background-color: #ffff;
 }
 
+.select-one-desktop {
+  display: flex;
+  align-items: center;
+  background-color: #F4F4F4;
+  padding: 8px 12px;
+  border-radius: 6px;
+  margin-right: 8px; /* промежуток между кнопками */
+  font-size: 14px;
+  color: #000;
+  white-space: nowrap;
+}
+
+.threeheader-desktop {
+  display: flex;
+  justify-content: space-between; /* Изменено с center на space-between */
+  align-items: center;
+  padding: 0px 130px 18px 139px; /* Отступы слева и справа */
+  background: white;
+  flex-wrap: wrap;
+}
+
+.select-one-desktop {
+  background-color: #F4F4F4;
+  border-radius: 6px;
+  min-height: 48px;
+  display: flex;
+  align-items: center;
+  padding: 0 16px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  flex: 0 0 auto; /* Запрещаем растягивание и сжатие */
+  margin: 0 7.5px; /* Половина от желаемого gap (15px/2) */
+}
+
+.select-one-desktop:hover {
+  background-color: #e0e0e0;
+}
+
+.one-desktop {
+  display: flex;
+  align-items: center;
+  gap: 8px; /* Расстояние между иконкой и текстом */
+}
+
+.one-desktop svg {
+  flex-shrink: 0; /* Запрещаем сжатие иконки */
+}
+
+.one-desktop p {
+  margin: 0;
+  color: #343A3F;
+  font-size: 14px;
+  white-space: nowrap; /* Запрещаем перенос текста */
+}
+
+.Build-computer-desktop {
+  background-color: #F4F4F4;
+  border-radius: 6px;
+  min-height: 48px;
+  display: flex;
+  align-items: center;
+  padding: 0 16px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  flex: 0 0 auto; /* Запрещаем растягивание и сжатие */
+  margin-left: auto;
+  margin-right: -110px;
+}
+
+.Build-computer-desktop:hover {
+  background-color: #e0e0e0;
+}
+
+.content-desktop {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.content-desktop svg {
+  flex-shrink: 0;
+}
+
+.content-desktop p {
+  margin: 0;
+  color: #4888FF;
+  font-size: 14px;
+  white-space: nowrap;
+}
 
 }
     
