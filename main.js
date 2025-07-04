@@ -124,6 +124,7 @@ function moveElementsForDesktop() {
     const helpEl = document.querySelector('.help');
     const grey = document.querySelector('.grey');
     const main = document.querySelector('main');
+    const header = document.querySelector('header');
   
     if (!grey || !main) return;
   
@@ -161,7 +162,8 @@ function moveElementsForDesktop() {
     } else {
       // Возвращаем всё в main
       if (cityEl && !main.contains(cityEl)) main.appendChild(cityEl);
-      if (phoneEl && !main.contains(phoneEl)) main.appendChild(phoneEl);
+      const mobileContainer = document.querySelector('.mobile-header') || main || document.body;
+      if (phoneEl && !header.contains(phoneEl)) header.appendChild(phoneEl);
       if (timeEl && !main.contains(timeEl)) main.appendChild(timeEl);
       if (helpEl && !main.contains(helpEl)) main.appendChild(helpEl);
   
