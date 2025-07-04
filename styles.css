@@ -463,7 +463,12 @@ color: rgba(52, 58, 63, 0.5);
 .threeheader-desktop{
   display: none;
 }
-
+.main-desktop{
+  display: none;
+}
+.main-mobail{
+  display: block;
+}
 @media (min-width: 768px) {
     .world {
       display: none;
@@ -740,7 +745,154 @@ background-color: #ffff;
   white-space: nowrap;
 }
 
+.main-mobail {
+  display: none;
+}
+
+.main-desktop {
+  min-height: 70vh;
+  overflow: hidden;
+  display: block;
+}
+/* Контейнер для текста и кнопки */
+.text-content {
+position: relative;
+width: 50%;
+padding: 84px 0 0 100px;
+box-sizing: border-box;
+z-index: 2;
+}
+
+.title-desktop {
+font-family: "Tenor Sans", sans-serif;
+font-weight: 400;
+font-size: 48px;
+line-height: 1.2;
+color: #FFFFFF;
+margin-left: 100px;
+margin-top: -20px;
+max-width: 800px;
+}
+
+.text-desktop {
+font-family: "Tenor Sans", sans-serif;
+font-weight: 400;
+font-size: 18px;
+line-height: 1.5;
+color: #FFFFFF;
+margin-left: 100px;
+margin-top: -20px;
+max-width: 800px;
+opacity: 0.9;
+}
+
+.catalog-desktop {
+  margin-left: 100px;
+margin-bottom: 83px;
+height: 52px;
+width: 156px;
+border-radius: 6px;
+border: none;
+background-color: #FFFFFF;
+text-align: center;
+color: #672870;
+font-size: 16px;
+font-family: "Tenor Sans", sans-serif;
+cursor: pointer;
+transition: transform 0.2s;
+}
+
+.catalog-desktop:hover {
+transform: translateY(-2px);
+}
+
+/* Изображение справа */
+.main-desktop img {
+  position: absolute;
+  right: -100px; /* Фиксированный отступ справа */
+  top: 50%;
+  transform: translateY(-50%);
+  width: auto;
+  max-width: 40%; /* Ограничиваем ширину изображения */
+  z-index: 1;
+  object-fit: contain;
+}
+
+
 }
     
+@media (min-width: 1024px) and (max-width: 1439px) {
+  .main-desktop img {
+    position: absolute;
+    right: -100px; /* Фиксированный отступ справа */
+    top: 80%;
+    transform: translateY(-50%);
+    width: auto;
+    max-width: 40%; /* Ограничиваем ширину изображения */
+    z-index: 1;
+    object-fit: contain;
+}}
+@media (min-width: 1440px) and (max-width: 2000px) {
+  .main-desktop img {
+    position: absolute;
+    right: -100px; /* Фиксированный отступ справа */
+    top: 40%;
+    transform: translateY(-50%);
+    width: auto;
+    max-width: 40%; /* Ограничиваем ширину изображения */
+    z-index: 1;
+    object-fit: contain;
+  }
+}
+@media (min-width: 2001px){
+  .main-desktop img {
+    position: absolute;
+    right: -100px; /* Фиксированный отступ справа */
+    top: 30%;
+    transform: translateY(-50%);
+    width: auto;
+    max-width: 40%; /* Ограничиваем ширину изображения */
+    z-index: 1;
+    object-fit: contain;
+    transform: translateY(-50%) scale(1.1);
+   
+}
+.title-desktop{
+  font-family: "Tenor Sans", sans-serif;
+font-weight: 400;
+font-size: 68px;
+line-height: 1.2;
+color: #FFFFFF;
+margin-left: 100px;
+margin-top: -20px;
+max-width: 1300px;
+}
+.text-desktop{
+  font-family: "Tenor Sans", sans-serif;
+  font-weight: 400;
+  font-size: 28px;
+  line-height: 1.5;
+  color: #FFFFFF;
+  margin-left: 100px;
+  margin-top: -20px;
+  max-width: 1300px;
+  opacity: 0.9
+}
+.catalog-desktop {
+  margin-left: 100px;
+margin-bottom: 93px;
+height: 62px;
+width: 166px;
+border-radius: 6px;
+border: none;
+background-color: #FFFFFF;
+text-align: center;
+color: #672870;
+font-size: 26px;
+font-family: "Tenor Sans", sans-serif;
+cursor: pointer;
+transition: transform 0.2s;
+}
+}
   
   
