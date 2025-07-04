@@ -128,7 +128,6 @@ function moveElementsForDesktop() {
   
     if (!grey || !main) return;
   
-    // Создаём контейнеры один раз
     let leftGroup = grey.querySelector('.left-group');
     if (!leftGroup) {
       leftGroup = document.createElement('div');
@@ -160,14 +159,12 @@ function moveElementsForDesktop() {
   
       if (helpEl && !rightGroup.contains(helpEl)) rightGroup.appendChild(helpEl);
     } else {
-      // Возвращаем всё в main
       if (cityEl && !main.contains(cityEl)) main.appendChild(cityEl);
       const mobileContainer = document.querySelector('.mobile-header') || main || document.body;
       if (phoneEl && !header.contains(phoneEl)) header.appendChild(phoneEl);
       if (timeEl && !main.contains(timeEl)) main.appendChild(timeEl);
       if (helpEl && !main.contains(helpEl)) main.appendChild(helpEl);
   
-      // Удаляем временные контейнеры, чтобы не мешались
       if (leftGroup) leftGroup.remove();
       if (centerGroup) centerGroup.remove();
       if (rightGroup) rightGroup.remove();
@@ -184,13 +181,11 @@ function moveElementsForDesktop() {
     
     if (!gamepad) return;
 
-    // Анимация появления через 300ms после загрузки
     setTimeout(() => {
         gamepad.style.transition = 'right 1.2s cubic-bezier(0.22, 0.61, 0.36, 1), opacity 0.8s ease';
         gamepad.style.right = '-100px';
         gamepad.style.opacity = '1';
         
-        // Для экранов > 2000px добавляем масштабирование
         if (window.innerWidth >= 2001) {
             gamepad.style.transform = 'translateY(-50%) scale(1.1)';
         }

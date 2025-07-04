@@ -474,28 +474,23 @@ color: rgba(52, 58, 63, 0.5);
       display: none;
     }
   
-/* Основной hover-эффект для всех элементов */
 .select-one-desktop:hover {
-  background-color: rgba(72, 136, 255, 0.1); /* Легкий синий фон */
+  background-color: rgba(72, 136, 255, 0.1); 
 }
 
-/* Подсветка текста при наведении */
 .select-one-desktop:hover .one-desktop p {
   color: #4888FF !important;
 }
 
-/* Подсветка иконок SVG при наведении */
 .select-one-desktop:hover .one-desktop svg path {
   fill: #4888FF !important;
   fill-opacity: 1 !important;
 }
 
-/* Подсветка иконок с обводкой */
 .select-one-desktop:hover .one-desktop svg path[stroke] {
   stroke: #4888FF !important;
 }
 
-/* Плавный переход для анимации */
 .select-one-desktop {
   transition: all 0.3s ease;
 }
@@ -506,19 +501,19 @@ color: rgba(52, 58, 63, 0.5);
 }
 
 .Build-computer-desktop:hover {
-  background-color: #4888FF !important; /* Синий фон */
+  background-color: #4888FF !important; 
 }
 
 .Build-computer-desktop:hover .content-desktop p {
-  color: #FFFFFF !important; /* Белый текст */
+  color: #FFFFFF !important; 
 }
 
 .Build-computer-desktop:hover .content-desktop svg path {
-  stroke: #FFFFFF !important; /* Белая иконка */
-  fill: #FFFFFF !important; /* На случай если иконка использует fill */
+  stroke: #FFFFFF !important; 
+  fill: #FFFFFF !important; 
 }
 
-/* Плавные переходы */
+
 .Build-computer-desktop {
   transition: all 0.3s ease;
 }
@@ -527,14 +522,13 @@ color: rgba(52, 58, 63, 0.5);
 .Build-computer-desktop .content-desktop svg {
   transition: all 0.3s ease;
 }
-/* Стили для кнопок избранное, помощь и корзина - изменение цвета SVG при наведении */
+
 .favorite-desktop:hover svg path,
 .helper-desktop:hover svg path,
 .basket-desktop:hover svg path {
     fill: #4888FF;
 }
 
-/* Стили для телеграм и whatsapp - изменение фона и цвета SVG при наведении */
 .telegram-desktop:hover,
 .whatsapp-desktop:hover {
     background-color: #D4D9DD;
@@ -545,7 +539,6 @@ color: rgba(52, 58, 63, 0.5);
     fill: #4888FF;
 }
 
-/* Дополнительные стили для плавного перехода */
 .favorite-desktop,
 .helper-desktop,
 .basket-desktop,
@@ -752,7 +745,7 @@ background-color: #ffff;
   background-color: #F4F4F4;
   padding: 8px 12px;
   border-radius: 6px;
-  margin-right: 8px; /* промежуток между кнопками */
+  margin-right: 8px; 
   font-size: 14px;
   color: #000;
   white-space: nowrap;
@@ -760,9 +753,9 @@ background-color: #ffff;
 
 .threeheader-desktop {
   display: flex;
-  justify-content: space-between; /* Изменено с center на space-between */
+  justify-content: space-between; 
   align-items: center;
-  padding: 0px 130px 18px 139px; /* Отступы слева и справа */
+  padding: 0px 130px 18px 139px; 
   background: white;
   flex-wrap: wrap;
 }
@@ -776,8 +769,8 @@ background-color: #ffff;
   padding: 0 16px;
   cursor: pointer;
   transition: background-color 0.2s;
-  flex: 0 0 auto; /* Запрещаем растягивание и сжатие */
-  margin: 0 7.5px; /* Половина от желаемого gap (15px/2) */
+  flex: 0 0 auto; 
+  margin: 0 7.5px; 
 }
 
 .select-one-desktop:hover {
@@ -787,18 +780,18 @@ background-color: #ffff;
 .one-desktop {
   display: flex;
   align-items: center;
-  gap: 8px; /* Расстояние между иконкой и текстом */
+  gap: 8px; 
 }
 
 .one-desktop svg {
-  flex-shrink: 0; /* Запрещаем сжатие иконки */
+  flex-shrink: 0; 
 }
 
 .one-desktop p {
   margin: 0;
   color: #343A3F;
   font-size: 14px;
-  white-space: nowrap; /* Запрещаем перенос текста */
+  white-space: nowrap; 
 }
 
 .Build-computer-desktop {
@@ -810,7 +803,7 @@ background-color: #ffff;
   padding: 0 16px;
   cursor: pointer;
   transition: background-color 0.2s;
-  flex: 0 0 auto; /* Запрещаем растягивание и сжатие */
+  flex: 0 0 auto; 
   margin-left: auto;
   margin-right: -110px;
 }
@@ -845,7 +838,7 @@ background-color: #ffff;
   overflow: hidden;
   display: block;
 }
-/* Контейнер для текста и кнопки */
+
 .text-content {
 position: relative;
 width: 50%;
@@ -897,14 +890,13 @@ transition: transform 0.2s;
 transform: translateY(-2px);
 }
 
-/* Изображение справа */
 .main-desktop img {
   position: absolute;
-  right: -100px; /* Фиксированный отступ справа */
+  right: -100px; 
   top: 50%;
   transform: translateY(-50%);
   width: auto;
-  max-width: 40%; /* Ограничиваем ширину изображения */
+  max-width: 40%; 
   z-index: 1;
   object-fit: contain;
 }
@@ -917,22 +909,22 @@ transform: translateY(-2px);
 @media (min-width: 1024px) and (max-width: 1439px) {
   .main-desktop img {
     position: absolute;
-    right: -100px; /* Фиксированный отступ справа */
+    right: -100px; 
     top: 80%;
     transform: translateY(-50%);
     width: auto;
-    max-width: 40%; /* Ограничиваем ширину изображения */
+    max-width: 40%; 
     z-index: 1;
     object-fit: contain;
 }}
 @media (min-width: 1440px) and (max-width: 2000px) {
   .main-desktop img {
     position: absolute;
-    right: -100px; /* Фиксированный отступ справа */
+    right: -100px; 
     top: 40%;
     transform: translateY(-50%);
     width: auto;
-    max-width: 40%; /* Ограничиваем ширину изображения */
+    max-width: 40%; 
     z-index: 1;
     object-fit: contain;
   }
@@ -940,11 +932,11 @@ transform: translateY(-2px);
 @media (min-width: 2001px){
   .main-desktop img {
     position: absolute;
-    right: -100px; /* Фиксированный отступ справа */
+    right: -100px; 
     top: 30%;
     transform: translateY(-50%);
     width: auto;
-    max-width: 40%; /* Ограничиваем ширину изображения */
+    max-width: 40%; 
     z-index: 1;
     object-fit: contain;
     transform: translateY(-50%) scale(1.1);
@@ -989,18 +981,15 @@ transition: transform 0.2s;
 }
   
 
-/* Базовые стили для всех разрешений */
 .main-desktop img {
   position: absolute;
-  right: -300px; /* Начальное положение за пределами экрана */
+  right: -300px; 
   opacity: 0;
-  transition: none; /* Изначально без анимации */
-  z-index: 1;
+  transition: none; 
   object-fit: contain;
   max-width: 40%;
 }
 
-/* Анимация для разных разрешений */
 @media (min-width: 1024px) and (max-width: 1439px) {
   .main-desktop img {
       top: 80%;
@@ -1018,7 +1007,7 @@ transition: transform 0.2s;
 @media (min-width: 2001px) {
   .main-desktop img {
       top: 30%;
-      transform: translateY(-50%) scale(0.9); /* Начальный масштаб */
+      transform: translateY(-50%) scale(0.9); 
   }
 }
 
