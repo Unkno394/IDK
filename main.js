@@ -49,30 +49,29 @@ document.querySelector('.catalog-panel svg')?.addEventListener('click', function
     document.body.style.overflow = '';
 });
 
-// Обработка кликов на категории в основной панели
 document.querySelectorAll('.catalog-panel .select-one').forEach(item => {
     item.addEventListener('click', function(e) {
         e.stopPropagation();
         const panelTitle = this.querySelector('p')?.textContent.trim();
         
         if (panelTitle) {
-            // Устанавливаем заголовок для подкатегории
+            
             document.querySelector('.subcategory-panel .content-catalog p').textContent = panelTitle;
             
-            // Показываем панель подкатегорий
+            
             document.querySelector('.subcategory-panel').classList.add('active');
             document.body.style.overflow = 'hidden';
         }
     });
 });
 
-// Кнопка "назад" в подкатегориях
+
 document.querySelector('.subcategory-panel svg')?.addEventListener('click', function(e) {
     e.stopPropagation();
     document.querySelector('.subcategory-panel').classList.remove('active');
 });
 
-// Закрытие при клике вне панели
+
 document.addEventListener('click', (e) => {
     const subcategoryPanel = document.querySelector('.subcategory-panel');
     if (subcategoryPanel.classList.contains('active') && 
@@ -80,4 +79,40 @@ document.addEventListener('click', (e) => {
         !e.target.closest('.catalog-panel .select-one')) {
         subcategoryPanel.classList.remove('active');
     }
+});
+
+
+document.querySelectorAll('.subcategory-panel .select-two').forEach(item => {
+    if (item.querySelector('p')?.textContent.trim() === 'Смартфоны') {
+        item.addEventListener('click', function(e) {
+            e.stopPropagation();
+            document.querySelector('.smartphones-panel').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        });
+    }
+});
+
+
+document.querySelector('.smartphones-panel svg')?.addEventListener('click', function(e) {
+    e.stopPropagation();
+    document.querySelector('.smartphones-panel').classList.remove('active');
+    document.body.style.overflow = '';
+});
+
+
+document.addEventListener('click', (e) => {
+    const smartphonesPanel = document.querySelector('.smartphones-panel');
+    if (smartphonesPanel.classList.contains('active') && 
+        !e.target.closest('.smartphones-panel') && 
+        !e.target.closest('.subcategory-panel .select-two')) {
+        smartphonesPanel.classList.remove('active');
+        document.body.style.overflow = '';
+    }
+});
+
+document.querySelector('.catalog')?.addEventListener('click', function() {
+    const menuBtn = document.querySelector('.menu');
+    menuBtn.classList.add('active');
+    document.querySelector('.menu-panel').classList.add('active');
+    document.body.style.overflow = 'hidden';
 });
