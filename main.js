@@ -177,3 +177,23 @@ function moveElementsForDesktop() {
   window.addEventListener('resize', moveElementsForDesktop);
   window.addEventListener('DOMContentLoaded', moveElementsForDesktop);
   
+
+
+  document.addEventListener('DOMContentLoaded', function() {
+    const gamepad = document.querySelector('.main-desktop img');
+    
+    if (!gamepad) return;
+
+    // Анимация появления через 300ms после загрузки
+    setTimeout(() => {
+        gamepad.style.transition = 'right 1.2s cubic-bezier(0.22, 0.61, 0.36, 1), opacity 0.8s ease';
+        gamepad.style.right = '-100px';
+        gamepad.style.opacity = '1';
+        
+        // Для экранов > 2000px добавляем масштабирование
+        if (window.innerWidth >= 2001) {
+            gamepad.style.transform = 'translateY(-50%) scale(1.1)';
+        }
+    }, 300);
+});
+

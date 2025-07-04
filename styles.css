@@ -469,11 +469,99 @@ color: rgba(52, 58, 63, 0.5);
 .main-mobail{
   display: block;
 }
-@media (min-width: 768px) {
+@media (min-width: 1024px) {
     .world {
       display: none;
     }
   
+/* Основной hover-эффект для всех элементов */
+.select-one-desktop:hover {
+  background-color: rgba(72, 136, 255, 0.1); /* Легкий синий фон */
+}
+
+/* Подсветка текста при наведении */
+.select-one-desktop:hover .one-desktop p {
+  color: #4888FF !important;
+}
+
+/* Подсветка иконок SVG при наведении */
+.select-one-desktop:hover .one-desktop svg path {
+  fill: #4888FF !important;
+  fill-opacity: 1 !important;
+}
+
+/* Подсветка иконок с обводкой */
+.select-one-desktop:hover .one-desktop svg path[stroke] {
+  stroke: #4888FF !important;
+}
+
+/* Плавный переход для анимации */
+.select-one-desktop {
+  transition: all 0.3s ease;
+}
+
+.select-one-desktop .one-desktop p,
+.select-one-desktop .one-desktop svg path {
+  transition: all 0.3s ease;
+}
+
+.Build-computer-desktop:hover {
+  background-color: #4888FF !important; /* Синий фон */
+}
+
+.Build-computer-desktop:hover .content-desktop p {
+  color: #FFFFFF !important; /* Белый текст */
+}
+
+.Build-computer-desktop:hover .content-desktop svg path {
+  stroke: #FFFFFF !important; /* Белая иконка */
+  fill: #FFFFFF !important; /* На случай если иконка использует fill */
+}
+
+/* Плавные переходы */
+.Build-computer-desktop {
+  transition: all 0.3s ease;
+}
+
+.Build-computer-desktop .content-desktop p,
+.Build-computer-desktop .content-desktop svg {
+  transition: all 0.3s ease;
+}
+/* Стили для кнопок избранное, помощь и корзина - изменение цвета SVG при наведении */
+.favorite-desktop:hover svg path,
+.helper-desktop:hover svg path,
+.basket-desktop:hover svg path {
+    fill: #4888FF;
+}
+
+/* Стили для телеграм и whatsapp - изменение фона и цвета SVG при наведении */
+.telegram-desktop:hover,
+.whatsapp-desktop:hover {
+    background-color: #D4D9DD;
+}
+
+.telegram-desktop:hover svg path,
+.whatsapp-desktop:hover svg path {
+    fill: #4888FF;
+}
+
+/* Дополнительные стили для плавного перехода */
+.favorite-desktop,
+.helper-desktop,
+.basket-desktop,
+.telegram-desktop,
+.whatsapp-desktop {
+    transition: background-color 0.3s ease;
+}
+
+.favorite-desktop svg,
+.helper-desktop svg,
+.basket-desktop svg,
+.telegram-desktop svg,
+.whatsapp-desktop svg {
+    transition: fill 0.3s ease;
+}
+
     .grey {
       display: flex;
       background-color: #F4F4F4;
@@ -527,6 +615,9 @@ color: rgba(52, 58, 63, 0.5);
     text-align: center;
     margin-left: 25px;
     }
+
+    
+
     .twoheader-desktop {
       display: flex;
       align-items: center;         
@@ -819,6 +910,8 @@ transform: translateY(-2px);
 }
 
 
+
+
 }
     
 @media (min-width: 1024px) and (max-width: 1439px) {
@@ -895,4 +988,38 @@ transition: transform 0.2s;
 }
 }
   
-  
+
+/* Базовые стили для всех разрешений */
+.main-desktop img {
+  position: absolute;
+  right: -300px; /* Начальное положение за пределами экрана */
+  opacity: 0;
+  transition: none; /* Изначально без анимации */
+  z-index: 1;
+  object-fit: contain;
+  max-width: 40%;
+}
+
+/* Анимация для разных разрешений */
+@media (min-width: 1024px) and (max-width: 1439px) {
+  .main-desktop img {
+      top: 80%;
+      transform: translateY(-50%);
+  }
+}
+
+@media (min-width: 1440px) and (max-width: 2000px) {
+  .main-desktop img {
+      top: 40%;
+      transform: translateY(-50%);
+  }
+}
+
+@media (min-width: 2001px) {
+  .main-desktop img {
+      top: 30%;
+      transform: translateY(-50%) scale(0.9); /* Начальный масштаб */
+  }
+}
+
+
